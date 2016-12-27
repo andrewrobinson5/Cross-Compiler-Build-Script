@@ -9,4 +9,6 @@ Replace x86_64-elf with your target and you are set. It will do everything. It w
 
 You will also need to run something like the following command when you want to use the cross-compiler:
 
-    `export PATH="$HOME/opt/cross/bin:$PATH"`
+    . activate.sh
+
+Common target triples are x86_64-elf and i386-elf
