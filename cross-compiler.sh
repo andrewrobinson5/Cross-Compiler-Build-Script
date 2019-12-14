@@ -17,11 +17,11 @@ mkdir src
 
 cd src
 
-wget ftp://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz
-wget ftp://ftp.gnu.org/gnu/gcc/gcc-6.1.0/gcc-6.1.0.tar.gz
+wget https://ftp.gnu.org/gnu/binutils/binutils-2.33.1.tar.xz
+wget ftp://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.xz
 
-tar -xvzf binutils-2.26.tar.gz
-tar -xvzf gcc-6.1.0.tar.gz
+tar -xvzf binutils-2.33.1.tar.xz
+tar -xvzf gcc-9.2.0.tar.xz
 
 export PREFIX="$(pwd)/../path/"
 export TARGET=$1
@@ -29,14 +29,14 @@ export PATH="$PREFIX/bin:$PATH"
 
 mkdir build-binutils
 cd build-binutils
-../binutils-2.26/configure --target=$TARGET --prefix="$PREFIX" --with-sysroot --disable-nls --disable-werror
+../binutils-2.33.1/configure --target=$TARGET --prefix="$PREFIX" --with-sysroot --disable-nls --disable-werror
 make -j $(nproc)
 make install
 
 cd ..
 mkdir build-gcc
 cd build-gcc
-../gcc-6.1.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls --enable-languages=c,c++ --without-headers
+../gcc-9.2.0/configure --target=$TARGET --prefix="$PREFIX" --disable-nls --enable-languages=c,c++ --without-headers
 make -j $(nproc) all-gcc
 make -j $(nproc) all-target-libgcc
 make install-gcc
