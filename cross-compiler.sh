@@ -20,8 +20,8 @@ cd src
 wget https://ftp.gnu.org/gnu/binutils/binutils-2.33.1.tar.xz
 wget ftp://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.xz
 
-tar -xvzf binutils-2.33.1.tar.xz
-tar -xvzf gcc-9.2.0.tar.xz
+tar -xvf binutils-2.33.1.tar.xz
+tar -xvf gcc-9.2.0.tar.xz
 
 export PREFIX="$(pwd)/../path/"
 export TARGET=$1
