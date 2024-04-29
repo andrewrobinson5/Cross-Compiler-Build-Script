@@ -20,19 +20,20 @@ sudo apt install libgmp3-dev libmpfr-dev libisl-dev libmpc-dev texinfo -y
 
 cd "$(dirname "$0")"
 
-mkdir out
-cd out
+mkdir -pv out/{src,path}
+cd out/src
 
-mkdir path
-mkdir src
 
-cd src
+rm -rvf $BINUTILS.tar.xz $GCC.tar.xz
 
 wget https://ftp.gnu.org/gnu/binutils/$BINUTILS.tar.xz
 wget https://ftp.gnu.org/gnu/gcc/$GCC/$GCC.tar.xz
 
-tar -xvf $BINUTILS.tar.xz
-tar -xvf $GCC.tar.xz
+echo "Extracting Binutils..."
+tar -xf $BINUTILS.tar.xz
+
+echo "Extracting GCC..."
+tar -xf $GCC.tar.xz
 
 export PREFIX="$(pwd)/../path/"
 export TARGET=$1
