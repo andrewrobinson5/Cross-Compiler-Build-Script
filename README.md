@@ -20,5 +20,6 @@ Some common triples include:
  - x86_64-elf
  - arm-none-eabi
  - aarch64-none-elf
+ - riscv64-none-elf
  
 Read more about Target Triplets at [Target Triplets](https://wiki.osdev.org/Target_Triplet).
